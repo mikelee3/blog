@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * TODO: write what specifically this tests for annotations on entity.
+ * This tests equals and hashcode
  */
 @SpringBootTest
 @Transactional

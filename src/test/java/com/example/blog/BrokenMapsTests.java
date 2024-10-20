@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * TODO: write what specifically this tests for annotations on entity.
+ * This tests equals and hashcode
  */
 @SpringBootTest
 public class BrokenMapsTests {
