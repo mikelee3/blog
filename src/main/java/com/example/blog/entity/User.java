@@ -1,14 +1,14 @@
 package com.example.blog.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
+@ToString
 @Getter
 @Setter
 @Entity
@@ -19,9 +19,11 @@ public class User {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Post> posts = new LinkedHashSet<>();
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Comment> comments = new LinkedHashSet<>();
 

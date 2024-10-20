@@ -1,12 +1,12 @@
 package com.example.blog.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
 import java.util.Objects;
 
+@ToString
 @Getter
 @Setter
 @Entity
