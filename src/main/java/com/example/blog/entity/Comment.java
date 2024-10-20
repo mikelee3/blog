@@ -17,6 +17,10 @@ public class Comment {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private User author;
+
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;
