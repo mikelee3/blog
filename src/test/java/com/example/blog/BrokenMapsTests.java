@@ -14,6 +14,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * TODO: write what specifically this tests for annotations on entity.
+ */
 @SpringBootTest
 public class BrokenMapsTests {
     @Autowired
