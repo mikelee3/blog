@@ -13,3 +13,8 @@ To build the project:
 2. Then you'll need to manually run the src/main/resources/schema.sql file to build the database schema.
 
 3. At that point you should be ready to run the tests.
+
+
+To Review:
+
+https://stackoverflow.com/questions/48784923/is-using-id-field-in-allargsconstructor-while-using-spring-jpa-correct

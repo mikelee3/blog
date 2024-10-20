@@ -6,6 +6,7 @@ import com.example.blog.entity.User;
 import com.example.blog.repository.CommentRepository;
 import com.example.blog.repository.PostRepository;
 import com.example.blog.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import java.util.Set;
  * This tests equals and hashcode
  */
 @SpringBootTest
+@Transactional
 public class BrokenMapsTests {
     @Autowired
     private UserRepository userRepository;
