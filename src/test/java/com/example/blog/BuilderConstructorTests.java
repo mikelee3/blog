@@ -25,27 +25,31 @@ public class BuilderConstructorTests {
 
     @Test
     void builderTest() {
-        User author = User.builder().build();
+        User author = User.builder().username("bobby").build();
         userRepository.save(author);
 
-        Post post = Post.builder().author(author).build();
+        Post post = Post.builder().author(author).title("Post Title").content("Post Content").build();
         postRepository.save(post);
 
-        Comment comment = Comment.builder().author(author).build();
+        Comment comment = Comment.builder().author(author).content("Comment Content").build();
         commentRepository.save(comment);
     }
 
     @Test
     void noArgsConstructorTest() {
         User author = new User();
+        author.setUsername("bobby");
         userRepository.save(author);
 
         Post post = new Post();
         post.setAuthor(author);
+        post.setTitle("Post Title");
+        post.setContent("Post Content");
         postRepository.save(post);
 
         Comment comment = new Comment();
         comment.setAuthor(author);
+        comment.setContent("Comment Content");
         commentRepository.save(comment);
     }
 
@@ -56,13 +60,13 @@ public class BuilderConstructorTests {
     @Disabled("Unsure where to use this - hard-coding generated ids does not make sense")
     @Test
     void allArgsConstructorTest() {
-        User author = new User(111L, null, null);
+        User author = new User(111L, "bobby", null, null);
         userRepository.save(author);
 
-        Post post = new Post(1L, author);
+        Post post = new Post(1L, "My First Post", "My post content", author);
         postRepository.save(post);
 
-        Comment comment = new Comment(1L, author);
+        Comment comment = new Comment(1L, "My comment content", author);
         commentRepository.save(comment);
     }
 }

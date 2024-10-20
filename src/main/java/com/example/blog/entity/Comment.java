@@ -20,6 +20,8 @@ public class Comment {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    private String content;
+
     @ManyToOne
     @JoinColumn(name = "author_id")
     private User author;

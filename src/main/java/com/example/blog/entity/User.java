@@ -22,6 +22,8 @@ public class User {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    private String username;
+
     @ToString.Exclude
     @Builder.Default
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
