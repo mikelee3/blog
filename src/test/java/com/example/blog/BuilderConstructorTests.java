@@ -7,7 +7,6 @@ import com.example.blog.repository.CommentRepository;
 import com.example.blog.repository.PostRepository;
 import com.example.blog.repository.UserRepository;
 import jakarta.transaction.Transactional;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -57,7 +56,6 @@ public class BuilderConstructorTests {
      * For this test, JPA Buddy recommends having both AllArgsConstructor and NoArgsConstructor
      * if you have Builder.
      */
-    @Disabled("Unsure where to use this - hard-coding generated ids does not make sense")
     @Test
     void allArgsConstructorTest() {
         User author = new User("bobby", null, null);
