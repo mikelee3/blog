@@ -60,13 +60,13 @@ public class BuilderConstructorTests {
     @Disabled("Unsure where to use this - hard-coding generated ids does not make sense")
     @Test
     void allArgsConstructorTest() {
-        User author = new User(111L, "bobby", null, null);
+        User author = new User("bobby", null, null);
         userRepository.save(author);
 
-        Post post = new Post(1L, "My First Post", "My post content", author);
+        Post post = new Post("My First Post", "My post content", author);
         postRepository.save(post);
 
-        Comment comment = new Comment(1L, "My comment content", author);
+        Comment comment = new Comment("My comment content", author);
         commentRepository.save(comment);
     }
 }

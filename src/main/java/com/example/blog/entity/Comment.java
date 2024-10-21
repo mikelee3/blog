@@ -2,23 +2,19 @@ package com.example.blog.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.proxy.HibernateProxy;
 
 import java.util.Objects;
 
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Getter
 @Setter
 @Entity
-@Table(name = "comment")
-public class Comment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+public class Comment extends BaseEntity {
 
     private String content;
 
