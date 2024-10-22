@@ -35,6 +35,7 @@ Here are the practices this project tries to implement:
 
 1. Use @SuperBuilder for both parent and child classes in a hierarchy.
 2. Include both @NoArgsConstructor and @AllArgsConstructor if you are using @SuperBuilder, per the JPA Buddy recommendations.
+3. Includes @Builder.Default on mapped sets with empty sets. See the posts and comments mappings inside User.
 
 ## Setters an Getters
 
