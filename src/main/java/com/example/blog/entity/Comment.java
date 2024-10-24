@@ -3,6 +3,9 @@ package com.example.blog.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.NaturalId;
+
+import java.util.UUID;
 
 @SuperBuilder
 @NoArgsConstructor
@@ -11,9 +14,15 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @Entity
+@EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 public class Comment extends BaseEntity {
 
     private String content;
+
+    @NaturalId
+    @EqualsAndHashCode.Include
+    @Column(unique = true)
+    final private UUID uuid = UUID.randomUUID();
 
     @ManyToOne
     @JoinColumn(name = "author_id")

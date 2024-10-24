@@ -22,7 +22,7 @@ public class SameRecordsTests {
 
     @Test
     void userDetachTest() {
-        User user = new User();
+        User user = User.builder().username("red").build();
         entityManager.persist(user);
 
         User firstFetched = entityManager.find(User.class, user.getId());
