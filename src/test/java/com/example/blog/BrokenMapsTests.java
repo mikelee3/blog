@@ -30,7 +30,7 @@ public class BrokenMapsTests {
 
     @Test
     void userSetTest() {
-        User user = new User();
+        User user = User.builder().username("notacolor").build();
         Set<User> set = new HashSet<>();
         set.add(user);
 
@@ -41,7 +41,7 @@ public class BrokenMapsTests {
 
     @Test
     void postSetTest() {
-        Post post = new Post();
+        Post post = Post.builder().title("title").content("content").build();
         Set<Post> set = new HashSet<>();
         set.add(post);
 
@@ -52,7 +52,7 @@ public class BrokenMapsTests {
 
     @Test
     void commentSetTest() {
-        Comment comment = new Comment();
+        Comment comment = Comment.builder().content("content").build();
         Set<Comment> set = new HashSet<>();
         set.add(comment);
 

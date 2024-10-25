@@ -14,7 +14,11 @@ To build the project:
 
 2. Then you'll need to manually run the src/main/resources/schema.sql file to build the database schema.
 
-3. At that point you should be ready to run the tests.
+3. Manually run the src/main/resource/data.sql to add the test data.
+
+4. At that point you should be ready to run the tests.
+
+5. The dropall.sql file will clear the 3 tables if you want to rebuild the database.
 
 # Practices Implemented
 

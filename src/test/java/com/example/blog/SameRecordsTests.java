@@ -22,7 +22,7 @@ public class SameRecordsTests {
 
     @Test
     void userDetachTest() {
-        User user = User.builder().username("red").build();
+        User user = User.builder().username("notacolor").build();
         entityManager.persist(user);
 
         User firstFetched = entityManager.find(User.class, user.getId());
@@ -35,7 +35,7 @@ public class SameRecordsTests {
 
     @Test
     void postDetachTest() {
-        Post post = new Post();
+        Post post = Post.builder().title("title").content("content").build();
         entityManager.persist(post);
 
         Post firstFetched = entityManager.find(Post.class, post.getId());
@@ -48,7 +48,7 @@ public class SameRecordsTests {
 
     @Test
     void commentDetachTest() {
-        Comment comment = new Comment();
+        Comment comment = Comment.builder().content("content").build();
         entityManager.persist(comment);
 
         Comment firstFetched = entityManager.find(Comment.class, comment.getId());
