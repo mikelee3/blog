@@ -1,6 +1,6 @@
 # Project Overview
 
-This project is a simple implementation of this JPA Buddy Guide, with a couple of shortcut and additions.
+This project is a partial implementation of this JPA Buddy Guide, with some modifications. This version actually uses Lombok's equals and hashcode, againts the JPA Buddy recommendations, but is very specific with the fields that are being used. It uses the natural id if there is one, or implements a UUID in the cases where there is not one, and the UUID becomes the natural id. Then the Lombok fields for equals and hashcode are configured to only use the fields from the natural id. Right now the tests pass, but it is possible there are issues that haven't yet been thought of.
 
 https://jpa-buddy.com/guides/best-practices-and-common-pitfalls-of-using-lombok-with-jpa/
 
@@ -49,3 +49,10 @@ Here are the practices this project tries to implement:
 
 1. Use the Jakarta MappedSuperclass annotation on the base entity class so that JPA understands that this is an inheritance hierarchy.
 
+# Reference
+
+1. https://www.artima.com/articles/how-to-write-an-equality-method-in-java
+2. Equals Verifier, used in unit testing. https://jqno.nl/equalsverifier/
+3. https://projectlombok.org/features/EqualsAndHashCode
+4. https://thorben-janssen.com/ultimate-guide-to-implementing-equals-and-hashcode-with-hibernate/
+5. By the JPA Buddy folks - https://dzone.com/articles/lombok-and-jpa-what-may-go-wrong
